@@ -1,0 +1,315 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+  --primary: #4f8cff;
+  --secondary: #f5f7fa;
+  --accent: #ffb347;
+  --danger: #ff4d4f;
+  --success: #4caf50;
+  --text: #22223b;
+  --bg: #f8f9fa;
+  --card-bg: #fff;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  margin-right: 24px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--accent);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+#root {
+  background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  padding: 32px 0;
+}
+
+/* Hero Section */
+.first-container {
+  background: linear-gradient(120deg, #4f8cff 0%, #ffb347 100%);
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.content-home {
+  position: relative;
+  left: 5%;
+  background: rgba(255,255,255,0.85);
+  padding: 40px 48px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  max-width: 480px;
+}
+
+.content-home p {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.content-home button {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 2px 8px rgba(79,140,255,0.15);
+  transition: background 0.2s, color 0.2s;
+}
+.content-home button:hover {
+  background: var(--accent);
+  color: var(--text);
+}
+
+.second-container {
+  width: 100%;
+  min-height: 40vh;
+  background: var(--secondary);
+  border-radius: 24px 24px 0 0;
+  box-shadow: var(--shadow);
+  padding: 32px 0;
+}
+
+/* Card Grid */
+.card-container, .course-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.card1 {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card1:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(79,140,255,0.15);
+}
+
+.card1 .desc {
+  padding: 20px;
+  color: var(--text);
+  font-size: 1.1rem;
+  flex: 1;
+}
+
+.card1 .details {
+  background: linear-gradient(120deg, #4f8cff 0%, #ffb347 100%);
+  color: #fff;
+  padding: 24px 20px;
+  border-radius: 0 0 16px 16px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.read-more-link {
+  cursor: pointer;
+  color: var(--primary);
+  text-decoration: underline;
+  font-weight: 500;
+}
+.read-more-link:hover {
+  color: var(--danger);
+}
+
+/* Filter Bar */
+.filter-container {
+  width: 100%;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 8px 0;
+}
+.filter-container input,
+.filter-container select {
+  border: 1px solid var(--primary);
+  padding: 10px 16px;
+  margin: 0 10px;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+.filter-container input:focus,
+.filter-container select:focus {
+  border: 2px solid var(--accent);
+}
+
+/* Course Content Layout */
+.course-content {
+  width: 100%;
+  padding: 32px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.course-section {
+  flex: 1 1 320px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 24px;
+}
+.course-video {
+  flex: 1 1 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+/* Certificate */
+.certificate {
+  width: 100%;
+  padding: 32px;
+  border: 2px solid var(--primary);
+  border-radius: 16px;
+  background: #fff;
+  text-align: center;
+  box-shadow: var(--shadow);
+  margin-top: 32px;
+}
+.certificate h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+.certificate .content {
+  margin-bottom: 40px;
+}
+.certificate .content h2 {
+  font-size: 1.3rem;
+  margin: 10px 0;
+  font-weight: bold;
+}
+.certificate .content h3 {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  font-weight: 700;
+}
+.certificate .content .date {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 10px 0 20px 0;
+}
+
+/* Navbar Customization */
+.navbar {
+  background: var(--primary) !important;
+  box-shadow: var(--shadow);
+}
+.navbar-brand, .navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.navbar-nav .nav-link.active {
+  color: var(--accent) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .card-container, .course-container {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+@media (max-width: 900px) {
+  .content-home {
+    max-width: 90vw;
+    padding: 24px 12px;
+  }
+  .card-container, .course-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+@media (max-width: 768px) {
+  .first-container, .second-container {
+    min-height: 40vh;
+    padding: 16px 0;
+  }
+  .course-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .course-section, .course-video {
+    padding: 12px;
+    min-width: 0;
+  }
+}
+@media (max-width: 500px) {
+  .content-home p {
+    font-size: 1.3rem;
+  }
+  .certificate {
+    padding: 12px;
+  }
+}
+
+
